@@ -10,7 +10,7 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="logo">AAAS <span>Academy</span></a>
+  <a href="index.html" class="logo">AAAS <span>ACADEMY</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html" class="active">About</a></li>
@@ -19,7 +19,20 @@
     <li><a href="contact.html">Contact</a></li>
     <li><a href="admissions.html" class="nav-btn">Apply Now</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <a href="courses.html">Courses</a>
+  <a href="admissions.html">Admissions</a>
+  <a href="contact.html">Contact</a>
+  <a href="admissions.html" class="nav-btn">Apply Now</a>
+</div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -33,16 +46,16 @@
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
     <div>
       <div class="sec-tag">★ Who We Are</div>
-      <h2 class="sec-title">Building Leaders Since 2010</h2>
+      <h2 class="sec-title">Building Leaders Since 2017</h2>
       <p style="font-size:16px;color:var(--gray);line-height:1.9;margin-bottom:20px;">
-        AAAS Academy was founded with a singular mission — to provide every student with the education, mentorship, and confidence they need to become tomorrow's leaders. For over 15 years, we have been transforming the lives of students across Maharashtra.
+        AAAS Academy was founded with a singular mission — to provide every student with the education, mentorship, and confidence they need to become tomorrow's leaders. For over 9 years, we have been transforming the lives of students across Maharashtra.
       </p>
       <p style="font-size:16px;color:var(--gray);line-height:1.9;margin-bottom:32px;">
         Our approach blends a rigorous academic curriculum with holistic development programs — ensuring students excel not just in exams, but in life.
       </p>
       <a href="admissions.html" class="btn-gold">Join Our Family →</a>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div class="stats-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
       <div style="background:var(--navy);border-radius:14px;padding:32px 24px;text-align:center;">
         <div style="font-family:var(--head);font-size:46px;color:var(--accent);font-weight:700;">9+</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-top:6px;">Years of Excellence</div>
@@ -95,15 +108,15 @@
 <section style="background:var(--navy);">
   <div style="text-align:center;margin-bottom:40px;">
     <div class="sec-tag" style="color:var(--accent);">★ Leadership</div>
-    <h2 
+    <h2 class="sec-title" style="color:var(--white);">Meet Our Director</h2>
   </div>
-  <div style="display:flex;align-items:center;gap:48px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.25);border-radius:20px;padding:48px;max-width:860px;margin:0 auto;">
+  <div class="director-flex" style="display:flex;align-items:center;gap:48px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.25);border-radius:20px;padding:48px;max-width:860px;margin:0 auto;">
     <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8a6820);display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:42px;color:var(--navy);font-weight:700;flex-shrink:0;box-shadow:0 0 0 4px rgba(201,168,76,0.25);">P</div>
     <div>
       <div style="display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;">Director</div>
       <div style="font-family:var(--head);font-size:26px;color:var(--white);font-weight:700;margin-bottom:6px;">Pranay D. Raut</div>
       <div style="color:rgba(255,255,255,0.55);font-size:14px;margin-bottom:20px;">Ex-Principal, Shivaji English School</div>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
         <div style="background:rgba(255,255,255,0.06);border-radius:10px;padding:12px 20px;">
           <div style="font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:1px;margin-bottom:4px;">QUALIFICATIONS</div>
           <div style="font-size:14px;color:var(--accent2);font-weight:600;">MBA (Finance), B.Sc. (Math), B.A., B.Ed.</div>
@@ -133,7 +146,7 @@
       <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:24px;color:var(--accent2);margin:0 auto 14px;">V</div>
       <h3 style="font-size:18px;">Vidya S. Harinkhede</h3>
       <p style="color:var(--accent);font-size:13px;font-weight:600;">B.Sc., B.Ed</p>
-      <p style="margin-top:8px;">1 years of experience in Science subjects.</p>
+      <p style="margin-top:8px;">1 year of experience in Science subjects.</p>
     </div>
     <div class="card" style="text-align:center;">
       <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:24px;color:var(--accent2);margin:0 auto 14px;">S</div>
@@ -144,8 +157,8 @@
     <div class="card" style="text-align:center;">
       <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:24px;color:var(--accent2);margin:0 auto 14px;">S</div>
       <h3 style="font-size:18px;">Supriya Vinodkumar Chaudhari (Raut)</h3>
-      <p style="color:var(--accent);font-size:13px;font-weight:600;">B.A., M.A., B. Ed.</p>
-      <p style="margin-top:8px;">10 year of experience in History and Civics. Subjects</p>
+      <p style="color:var(--accent);font-size:13px;font-weight:600;">B.A., M.A., B.Ed.</p>
+      <p style="margin-top:8px;">10 years of experience in History and Civics.</p>
     </div>
   </div>
 </section>
@@ -155,7 +168,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="logo">AAAS <span>Academy</span></a>
-      <p>Nurturing young minds with innovative teaching, personalized attention, and a passion for excellence since 2010.</p>
+      <p>Nurturing young minds with innovative teaching, personalized attention, and a passion for excellence since 2017.</p>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -170,17 +183,32 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="#">📞 +91 98765 43210</a></li>
+        <li><a href="#">📞 +91 8408920187</a></li>
         <li><a href="#">✉ info@aaasacademy.in</a></li>
-        <li><a href="#">📍 First floor of Deshmukh Diagnostic Centre,ward no 14,Durga chowk main road,Goregaon 441801,Maharashtra</a></li>
+        <li><a href="#">📍 First floor of Deshmukh Diagnostic Centre, Ward No 14, Durga Chowk Main Road, Goregaon 441801, Maharashtra</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 <strong>AAAS Academy</strong>. All rights reserved.</p>
+    <p>© 2026 <strong>AAAS Academy</strong>. All rights reserved.</p>
     <p>Designed with ♥ for education</p>
   </div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>

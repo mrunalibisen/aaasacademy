@@ -10,7 +10,7 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="logo">AAAS <span>Academy</span></a>
+  <a href="index.html" class="logo">AAAS <span>ACADEMY</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -19,7 +19,20 @@
     <li><a href="contact.html">Contact</a></li>
     <li><a href="admissions.html" class="nav-btn">Apply Now</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="courses.html" class="active">Courses</a>
+  <a href="admissions.html">Admissions</a>
+  <a href="contact.html">Contact</a>
+  <a href="admissions.html" class="nav-btn">Apply Now</a>
+</div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -92,33 +105,33 @@
     <div class="card" style="text-align:center;">
       <span class="card-icon">🌅</span>
       <h3>Morning</h3>
-      <p style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">6:00 – 10:00 AM</p>
+      <p class="batch-time" style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">6:00 – 10:00 AM</p>
       <p style="margin-top:8px;">Mon to Sat</p>
     </div>
     <div class="card" style="text-align:center;">
       <span class="card-icon">☀️</span>
       <h3>Afternoon</h3>
-      <p style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">12:00 – 3:00 PM</p>
+      <p class="batch-time" style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">12:00 – 3:00 PM</p>
       <p style="margin-top:8px;">Mon to Sat</p>
     </div>
     <div class="card" style="text-align:center;">
       <span class="card-icon">🌆</span>
       <h3>Evening</h3>
-      <p style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">4:00 – 7:00 PM</p>
+      <p class="batch-time" style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">4:00 – 7:00 PM</p>
       <p style="margin-top:8px;">Mon to Sat</p>
     </div>
     <div class="card" style="text-align:center;">
       <span class="card-icon">📅</span>
       <h3>Weekend</h3>
-      <p style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">8:00 AM – 2:00 PM</p>
+      <p class="batch-time" style="font-size:20px;font-weight:700;color:var(--accent);font-family:var(--head);">8:00 AM – 2:00 PM</p>
       <p style="margin-top:8px;">Sat & Sun Only</p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section style="background:var(--navy);text-align:center;" class="on-dark">
-  <h2 class="sec-title" style="max-width:600px;margin:0 auto 16px;">Interested in Any Program?</h2>
+<section class="cta-banner" style="background:var(--navy);text-align:center;" class="on-dark">
+  <h2 class="sec-title" style="max-width:600px;margin:0 auto 16px;color:var(--white);">Interested in Any Program?</h2>
   <p style="font-size:17px;color:rgba(255,255,255,0.6);margin-bottom:36px;">Register today and our academic counselor will help you choose the right program for your child.</p>
   <a href="admissions.html" class="btn-gold">Apply Now →</a>
 </section>
@@ -146,15 +159,30 @@
         <li><a href="#">📞 84089 20187</a></li>
         <li><a href="#">📞 93093 11420</a></li>
         <li><a href="#">✉ info@aaasacademy.in</a></li>
-        <li><a href="#">📍First floor of Deshmukh Diagnostic Centre,ward no 14,Durga chowk main road,Goregaon 441801, Maharashtra</a></li>
+        <li><a href="#">📍 First floor of Deshmukh Diagnostic Centre, Ward No 14, Durga Chowk Main Road, Goregaon 441801, Maharashtra</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 <strong>AAAS Academy</strong>. All rights reserved.</p>
+    <p>© 2026 <strong>AAAS Academy</strong>. All rights reserved.</p>
     <p>Designed with ♥ for education</p>
   </div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>

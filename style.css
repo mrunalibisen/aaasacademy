@@ -86,6 +86,62 @@ body {
 .nav-btn:hover { background: var(--accent2) !important; }
 .nav-btn::after { display: none !important; }
 
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent2);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 70px; left: 0; right: 0;
+  background: rgba(11,17,32,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 6%;
+  z-index: 998;
+  flex-direction: column;
+  gap: 0;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover, .mobile-nav a.active { color: var(--accent2); }
+.mobile-nav .nav-btn {
+  margin-top: 14px;
+  text-align: center;
+  padding: 12px 22px !important;
+  border-radius: 8px;
+  border-bottom: none !important;
+}
+
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
@@ -165,7 +221,9 @@ body {
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent2); }
 
 .hero-stats {
-  display: flex; gap: 52px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   margin-top: 64px;
   padding-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -280,6 +338,7 @@ section { padding: 88px 6%; }
 .footer-col ul li a {
   font-size: 14px; color: rgba(255,255,255,0.55);
   text-decoration: none; transition: color 0.2s;
+  word-break: break-word;
 }
 .footer-col ul li a:hover { color: var(--accent2); }
 .footer-bottom {
@@ -304,9 +363,22 @@ section { padding: 88px 6%; }
   color: var(--navy); margin-bottom: 8px;
 }
 .form-group label span { color: #e53e3e; margin-left: 2px; }
-.form-group input,
-.form-group select,
+
+/* ── TEXT INPUTS & TEXTAREA (no appearance:none) ── */
+.form-group input:not([type="checkbox"]),
 .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e4e7ee;
+  border-radius: 8px;
+  font-family: var(--body); font-size: 14px;
+  color: var(--deep); background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+/* ── SELECT (appearance:none only here) ── */
+.form-group select {
   width: 100%;
   padding: 12px 16px;
   border: 1.5px solid #e4e7ee;
@@ -317,14 +389,24 @@ section { padding: 88px 6%; }
   outline: none;
   appearance: none;
 }
-.form-group input:focus,
+
+/* ── CHECKBOX (never touch appearance) ── */
+.form-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--navy);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.form-group input:not([type="checkbox"]):focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(232,168,56,0.13);
 }
 .form-group textarea { resize: vertical; min-height: 110px; }
-.form-group.err input,
+.form-group.err input:not([type="checkbox"]),
 .form-group.err select { border-color: #e53e3e; }
 .err-msg { display: none; font-size: 12px; color: #e53e3e; margin-top: 5px; }
 .form-group.err .err-msg { display: block; }
@@ -367,16 +449,152 @@ section { padding: 88px 6%; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── MOBILE ── */
+/* ══════════════════════════════════════
+   MOBILE RESPONSIVE — Single clean block
+   ══════════════════════════════════════ */
+
 @media (max-width: 768px) {
-  .navbar { padding: 0 5%; }
+
+  /* ── Navbar ── */
+  .navbar {
+    padding: 0 5%;
+    height: 64px;
+  }
   .nav-links { display: none; }
-  section { padding: 60px 5%; }
-  .hero { padding: 90px 5% 56px; }
-  .hero-stats { gap: 28px; flex-wrap: wrap; }
-  .page-hero { padding: 110px 5% 54px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; gap: 10px; }
-  .form-wrap { padding: 30px 22px; }
-  .form-row { grid-template-columns: 1fr; }
+  .hamburger { display: flex; }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 90px 5% 56px;
+    min-height: auto;
+  }
+  .hero h1 { font-size: 36px; }
+  .hero p  { font-size: 15px; }
+  .hero-badge { font-size: 10px; padding: 6px 14px; }
+  .hero-btns { gap: 12px; }
+  .btn-gold  { padding: 11px 22px; font-size: 13px; }
+  .btn-ghost { padding: 11px 22px; font-size: 13px; }
+
+  /* Hero stats — 2×2 grid */
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+    padding-top: 28px;
+  }
+  .stat-n { font-size: 28px; }
+  .stat-l { font-size: 11px; }
+
+  /* ── Page Hero ── */
+  .page-hero {
+    padding: 100px 5% 50px;
+  }
+  .page-hero h1 { font-size: 30px; }
+  .page-hero p  { font-size: 14px; }
+
+  /* ── Sections ── */
+  section { padding: 52px 5%; }
+
+  /* ── Typography ── */
+  .sec-title { font-size: clamp(22px, 6vw, 32px); }
+  .sec-sub   { font-size: 14px; margin-bottom: 32px; }
+
+  /* ── Cards ── */
+  .card { padding: 22px 18px; }
+  .card-icon { font-size: 26px; margin-bottom: 12px; }
+  .card h3   { font-size: 18px; }
+
+  /* ── Grids — collapse to 1 column ── */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Scholar cards — 2 per row on mobile */
+  .scholars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Inline grid overrides */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Auto-fill grids — reduce minmax */
+  [style*="minmax(200px"],
+  [style*="minmax(240px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* ── Form ── */
+  .form-wrap { padding: 28px 18px; }
+  .form-row  { grid-template-columns: 1fr; gap: 0; }
+  .form-group input:not([type="checkbox"]),
+  .form-group select,
+  .form-group textarea { font-size: 15px; padding: 11px 13px; }
+
+  /* ── Checkbox grid ── */
+  .checkbox-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ── Footer ── */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-brand p { max-width: 100%; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  /* ── Director / flex card ── */
+  .director-flex {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 24px !important;
+    padding: 28px 20px !important;
+  }
+
+  /* ── About stats grid — keep 2 col ── */
+  .stats-2col {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── Map placeholder ── */
+  .map-placeholder { height: 220px !important; }
+
+  /* ── word-break for addresses / long text ── */
+  .footer-col ul li a,
+  .card p { word-break: break-word; }
+
+  /* ── Batch timing cards ── */
+  .batch-time { font-size: 17px !important; }
+
+  /* ── CTA banner ── */
+  .cta-banner { padding: 48px 5% !important; }
+  .cta-banner h2 { font-size: 26px !important; }
+
+  /* ── Terms box ── */
+  .terms-box li { font-size: 13px; }
+
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .hero h1  { font-size: 28px; }
+  .sec-title { font-size: 22px; }
+
+  /* Scholar / auto-fill cards → 1 col on tiny screens */
+  [style*="minmax(200px"],
+  [style*="minmax(240px"] {
+    grid-template-columns: 1fr !important;
+  }
+  .checkbox-grid { grid-template-columns: 1fr; }
+
+  .hero-stats { grid-template-columns: 1fr 1fr; }
 }

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | AAAS Academy</title>
+<title>Contact Us | AAAS ACADEMY</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="logo">AAAS <span>Academy</span></a>
+  <a href="index.html" class="logo">AAAS <span>ACADEMY</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -19,7 +19,20 @@
     <li><a href="contact.html" class="active">Contact</a></li>
     <li><a href="admissions.html" class="nav-btn">Apply Now</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="courses.html">Courses</a>
+  <a href="admissions.html">Admissions</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="admissions.html" class="nav-btn">Apply Now</a>
+</div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -34,20 +47,20 @@
     <div class="card" style="text-align:center;">
       <span class="card-icon">📞</span>
       <h3>Call Us</h3>
-      <p style="font-size:18px;font-weight:600;color:var(--accent);margin:8px 0;">+91 98765 43210</p>
-      <p>Mon – Sat, 9:00 AM to 7:00 PM</p>
+      <p style="font-size:18px;font-weight:600;color:var(--accent);margin:8px 0;">+91 84089 20187</p>
+      <p style="font-size:15px;font-weight:600;color:var(--accent);">+91 93093 11420</p>
+      <p style="margin-top:8px;">Mon – Sat, 9:00 AM to 7:00 PM</p>
     </div>
     <div class="card" style="text-align:center;">
       <span class="card-icon">✉️</span>
       <h3>Email Us</h3>
-      <p style="font-size:16px;font-weight:600;color:var(--accent);margin:8px 0;">info@aaasacademy.in</p>
+      <p style="font-size:16px;font-weight:600;color:var(--accent);margin:8px 0;word-break:break-word;">info@aaasacademy.in</p>
       <p>We reply within 24 hours on working days</p>
     </div>
     <div class="card" style="text-align:center;">
       <span class="card-icon">📍</span>
       <h3>Visit Us</h3>
-      <p style="font-size:15px;font-weight:600;color:var(--accent);margin:8px 0;">First floor of Deshmukh Diagnostic Centre,ward no 14 ,Durga chowk main road ,Goregaon 441801, Maharashtra</p>
-      <p>India</p>
+      <p style="font-size:14px;font-weight:600;color:var(--accent);margin:8px 0;word-break:break-word;">First floor of Deshmukh Diagnostic Centre, Ward No 14, Durga Chowk Main Road, Goregaon 441801, Maharashtra</p>
     </div>
   </div>
 
@@ -96,7 +109,7 @@
 
       <div class="form-group">
         <label>Your Message <span>*</span></label>
-        <textarea id="cmessage" placeholder="Write your message here…" style="min-height:130px;" id="cmsg"></textarea>
+        <textarea id="cmessage" placeholder="Write your message here…" style="min-height:130px;"></textarea>
       </div>
 
       <button type="submit" class="submit-btn">Send Message →</button>
@@ -114,11 +127,11 @@
 <section style="background:var(--light);padding:60px 6%;">
   <div class="sec-tag">★ Find Us</div>
   <h2 class="sec-title">Our Location</h2>
-  <div style="width:100%;height:340px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);margin-top:12px;">
-    <div style="text-align:center;">
+  <div class="map-placeholder" style="width:100%;height:340px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);margin-top:12px;">
+    <div style="text-align:center;padding:0 20px;">
       <div style="font-size:48px;margin-bottom:16px;">📍</div>
       <p style="font-family:var(--head);font-size:22px;color:var(--accent2);margin-bottom:8px;">AAAS Academy</p>
-      <p style="font-size:15px;color:rgba(255,255,255,0.6);">First floor of Deshmukh Diagnostic Centre,ward no 14,Durga chowk main road,Goregaon 441801, Maharashtra</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.6);word-break:break-word;">First floor of Deshmukh Diagnostic Centre, Ward No 14, Durga Chowk Main Road, Goregaon 441801, Maharashtra</p>
       <a href="https://maps.google.com" target="_blank" class="btn-gold" style="margin-top:20px;display:inline-block;font-size:13px;padding:10px 22px;">Open in Google Maps →</a>
     </div>
   </div>
@@ -130,7 +143,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="logo">AAAS <span>Academy</span></a>
-      <p>Nurturing young minds with innovative teaching, personalized attention, and a passion for excellence since 2010.</p>
+      <p>Nurturing young minds with innovative teaching, personalized attention, and a passion for excellence since 2017.</p>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -145,19 +158,32 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="#">📞 +91 98765 43210</a></li>
+        <li><a href="#">📞 +91 84089 20187</a></li>
         <li><a href="#">✉ info@aaasacademy.in</a></li>
-        <li><a href="#">📍First floor of Deshmukh Diagnostic Centre,ward no 14,Durga chowk main road,Goregaon 441801, Maharashtra</a></li>
+        <li><a href="#">📍 First floor of Deshmukh Diagnostic Centre, Ward No 14, Durga Chowk Main Road, Goregaon 441801, Maharashtra</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 <strong>AAAS Academy</strong>. All rights reserved.</p>
+    <p>© 2026 <strong>AAAS Academy</strong>. All rights reserved.</p>
     <p>Designed with ♥ for education</p>
   </div>
 </footer>
 
 <script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+
   const cForm = document.getElementById('contactForm');
   const cSuccess = document.getElementById('contactSuccess');
 
