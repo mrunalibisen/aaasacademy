@@ -482,11 +482,12 @@
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Registration →';
       }
-    } catch (err) {
-      alert('Network error. Please check your internet and try again.');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Registration →';
-    }
+    }  catch (err) {
+  console.error('Fetch error:', err);         // Check browser console
+  alert('Error: ' + err.message);            // Shows real message
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Submit Registration →';
+}
   });
  
   document.querySelectorAll('input, select').forEach(el => {
